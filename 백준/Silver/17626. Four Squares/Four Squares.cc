@@ -8,13 +8,16 @@ int main() {
 
     int dp[n + 1]; 
     dp[0] = 0;  
-    
+
+    //최대값으로 초기화
     for (int i = 1; i <= n; i++) {
-        int temp = 5;
+        dp[i] = i;
+    }
+
+    for (int i = 1; i <= n; i++) {
         for (int j = 1; j * j <= i; j++) {
-            temp = min(temp, dp[i - j * j] + 1);
+            dp[i] = min(dp[i], dp[i - j * j] + 1);
         }
-        dp[i]=temp;
     }
 
     cout << dp[n];
