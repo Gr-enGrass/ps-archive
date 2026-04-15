@@ -8,6 +8,4 @@
 - BaekjoonHub를 이용한 자동 커밋
 
 ## 🔗 링크
-- 백준: https://www.acmicpc.net/user/alswnsalstmd  
-- solved.ac: https://solved.ac/profile/alswnsalstmd
-- [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=alswnsalstmd)](https://solved.ac/profile/alswnsalstmd)
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=alswnsalstmd)](https://solved.ac/profile/alswnsalstmd)
