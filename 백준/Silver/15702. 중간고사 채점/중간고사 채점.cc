@@ -7,7 +7,7 @@
 #include <limits>
 using namespace std;
 
-bool cmp(const pair<int,int>&a, const pair<int,int>&b)
+bool cmp(pair<int,int>&a, pair<int,int>&b)
 {
 	if (a.second == b.second)
 	{
