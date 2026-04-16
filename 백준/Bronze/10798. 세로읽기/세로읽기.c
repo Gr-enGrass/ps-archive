@@ -1,27 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-	char arr[5][16] = { 0 };
-	int max = 0;
-
+	char str[5][16] = { 0 };
 	for (int i = 0; i < 5; i++)
 	{
-		scanf("%s", arr[i]);
-		if (max < strlen(arr[i]))
-			max = strlen(arr[i]);
+		scanf("%s", str[i]);
+		getchar();
 	}
-
-	for (int i = 0; i < max; i++)
+	for (int j = 0; j < 15; j++)
 	{
-		for (int j = 0; j < 5; j++)
+		for (int k = 0;k<5; k++)
 		{
-			if (arr[j][i] != NULL)
+			if (str[k][j] != 0)
 			{
-				printf("%c", arr[j][i]);
-			}
+				printf("%c", str[k][j]);
+			}			
 		}
 	}
 }
