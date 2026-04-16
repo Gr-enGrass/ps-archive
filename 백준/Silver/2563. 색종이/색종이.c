@@ -1,35 +1,33 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-	int n = 0;
-	int x, y;
-	char arr[100][100] = { 0 };
-
+	int cnt = 0;
+	int n;
 	scanf("%d", &n);
-
+	int arr[100][100] = { 0 };
 	for (int i = 0; i < n; i++)
 	{
+		int x, y;
 		scanf("%d %d", &x, &y);
-		for (int j = x; j < x + 10; j++)
+
+		for (int k = x - 1; k < x+9; k++)
 		{
-			for (int k = y; k < y + 10; k++)
+			for (int j = y - 1; j < y+9; j++)
 			{
-				arr[j][k] = 1;
+				arr[k][j] = 1;
 			}
 		}
 	}
-
-	int cnt = 0;
-
-	for (int i = 0; i < 100; i++)
+	for (int l = 0; l < 100; l++)
 	{
-		for (int j = 0; j < 100; j++)
+		for (int m = 0; m < 100; m++)
 		{
-			if (arr[i][j] == 1)
+			if (arr[l][m] == 1)
+			{
 				cnt++;
+			}
 		}
 	}
 	printf("%d", cnt);
