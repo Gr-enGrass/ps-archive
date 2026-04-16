@@ -4,20 +4,18 @@
 
 int main()
 {
-	char arr[161] = { 0 };
-	int n = 0;
-	scanf("%d", &n);
-	for (int i = 0; i < n; i++)
+	char S[21];
+	int T,R;
+	
+	
+	for (scanf("%d", &T); T--;)
 	{
-		int r = 0;
-		scanf("%d", &r);
-		scanf("%s", arr);
-		int size = strlen(arr);
-		for (int j = 0; j < size; j++)
+		scanf("%d %s", &R, S);
+		for (int i = 0; S[i] != 0; ++i)
 		{
-			for (int k = 0; k < r; k++)
+			for (int j = 0; j < R; ++j)
 			{
-				printf("%c", arr[j]);
+				printf("%c", S[i]);
 			}
 		}
 		printf("\n");
