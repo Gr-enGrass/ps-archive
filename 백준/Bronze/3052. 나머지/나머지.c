@@ -1,30 +1,22 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int main()
-{
-	int num[10], remain[10],i=0,result=0;
-
-	while (i<10)
-	{
-		scanf("%d", &num[i]);
-		++i;
-	}
-	for (int j = 0; j < 10; ++j)
-	{
-		remain[j] = num[j] % 42;
-	}
-	for (int k = 0; k < 10; ++k)
-	{
-		int cun = 0;
-		for (int l = k + 1; l < 10;++l) 
-		{
-			if (remain[k] == remain[l])
-				++cun;
-		}
-		if (cun == 0)
-			++result;
-	}
-	printf("%d", result);
-	return 0;
+int main(void) {
+    
+    int input, result=0;
+    int remain[10];
+    
+    for(int i=0; i<10; i++) {
+        scanf("%d", &input);
+        remain[i] = (input % 42);
+    }
+    
+    for(int i=0; i<10; i++) {
+        int count=0; // 초기화
+        for(int j=i+1; j<10; j++) { // 서로 같은 수일 경우
+            if(remain[i] == remain[j]) count++;
+        }
+        if (count == 0) result++; // 같은 수가 없을 경우 개수를 세준다
+    }
+    
+   printf("%d", result);
 }
