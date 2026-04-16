@@ -19,24 +19,7 @@ int main()
 	
 	for (const char& a : str)
 	{
-		switch (a)
-		{
-			case 'M':
-				arr[a - 'A']++;
-				break;
-			case 'O':
-				arr[a - 'A']++;
-				break;
-			case 'B':
-				arr[a - 'A']++;
-				break;
-			case 'I':
-				arr[a - 'A']++;
-				break;
-			case 'S':
-				arr[a - 'A']++;
-				break;
-		}
+		arr[a - 'A']++;
 	}
 
 	if (arr['M' - 'A'] && arr['O' - 'A'] && arr['B' - 'A'] && arr['I' - 'A'] && arr['S' - 'A'])
