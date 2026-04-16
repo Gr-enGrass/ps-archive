@@ -1,29 +1,43 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
+#include <stdio.h>
 
-int abs(int a)
+int main()
 {
-	if (a < 0)
-		a = -a;
-	return a;
-}
-
-int main() 
-{
-	int n;
-	scanf("%d", &n);
-
-	for (int i = 0; i < 2 * n - 1; i++)
-	{
-		for (int j = 0; j < abs(n - i - 1); j++)
+	int N,cnt=1,N1,N2,N3,SAVE;
+	scanf("%d", &N);
+	
+	SAVE = N;
+	N1 = SAVE;
+	N2 = SAVE;
+	N3 = SAVE;
+	for (int i = 0; i < N1; i++)
+	{	
+		for (int j = 0; j < N-1; j++)
 		{
 			printf(" ");
 		}
-		for (int k = 0; k < 2*(n-abs(n-i-1))-1; k++)
+		N--;
+		for (int k = 0; k < cnt; k++)
 		{
 			printf("*");
 		}
+		cnt += 2;
 		printf("\n");
 	}
-	return 0;
+	cnt = 1;
+	N1 = SAVE-1;
+	for (int l = 0; l < N2 - 1; l++)
+	{
+		for (int m = N1;m<N2;m++)
+		{
+			printf(" ");
+		}
+		N1--;
+		for (int n = 0; n < (N3 * 2 - 3); n++)
+		{
+			printf("*");
+		}
+		N3--;
+		printf("\n");
+	}
 }
