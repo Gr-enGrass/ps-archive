@@ -1,23 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main()
-{
-	char S[21];
-	int T,R;
-	
-	
-	for (scanf("%d", &T); T--;)
-	{
-		scanf("%d %s", &R, S);
-		for (int i = 0; S[i] != 0; ++i)
+
+main(t, r, i, j) 
+{ 
+	char s[21]; 
+	for (scanf("%d", &t); t--;) 
+	{ 
+		scanf("%d %s", &r, s); 
+		for (i = 0; s[i] != 0; i++)
 		{
-			for (int j = 0; j < R; ++j)
+			for (j = 0; j < r; j++)
 			{
-				printf("%c", S[i]);
+				printf("%c", s[i]);
 			}
 		}
-		printf("\n");
-	}
+		printf("\n"); 
+	} 
 }
