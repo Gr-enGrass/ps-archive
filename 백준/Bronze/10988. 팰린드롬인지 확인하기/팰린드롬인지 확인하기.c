@@ -1,19 +1,31 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
 int main()
 {
-	char arr[101] = { 0 };
-	char arr_c[101] = { 0 };
+	char str[101];
+	int cnt = 0, result;
 
-	scanf("%s", arr);
-	int len = strlen(arr);
-	for (int i = 0; i < len; i++)
+	scanf("%s", str);
+
+	for (int i = 0; i < strlen(str)-1 / 2; i++)
 	{
-		arr_c[i]=arr[len-i-1];
+		if (str[i] == str[strlen(str) -1 - cnt])
+		{
+			result = 1;
+		}
+		else
+		{
+			result = 0;
+		}
+		cnt++;
+		if (result == 0)
+		{
+			printf("0");
+			return 0;
+		}
 	}
-
-	int flag = strncmp(arr, arr_c, len / 2);
-	printf("%d", flag ? 0 : 1);
+	printf("1");
+	return 0;
 }
