@@ -6,7 +6,7 @@
 #include <sstream>
 #include <limits>
 #include <queue>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 bool cmp(const pair<string, int>& a, const pair<string, int>& b)
@@ -23,7 +23,7 @@ int main()
 	cin >> n >> m >> k;
 
 	int cnt = m - k;
-	map<string, int>mp1;
+	unordered_map<string, int>mp1;
 	while (n--)
 	{
 		string str;
