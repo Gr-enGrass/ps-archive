@@ -10,7 +10,6 @@ int gcd(int a, int b)
     return gcd(b, a % b);
 }
 
-
 int lcm(int a, int b) 
 {
     return a / gcd(a, b) * b;
@@ -31,29 +30,40 @@ int solution(vector<vector<int>> signals)
         totalCycle = lcm(totalCycle, cycle);
     }
 
-    for (int t = 1; t <= totalCycle; t++) 
+    int G1 = signals[0][0];
+    int Y1 = signals[0][1];
+    int R1 = signals[0][2];
+    int cycle1 = G1 + Y1 + R1;
+
+    for (int base = 0; base < totalCycle; base += cycle1) 
     {
-        bool allYellow = true;
-        
-        for (int i = 0; i < n; i++) 
+        for (int offset = 0; offset < Y1; offset++) 
         {
-            int G = signals[i][0];
-            int Y = signals[i][1];
-            int R = signals[i][2];
+            int t = base + G1 + offset + 1;
             
-            int cycle = G + Y + R;
+            if (t > totalCycle) break;
+
+            bool allYellow = true;
             
-            int cur = (t - 1) % cycle;
-            
-            if (!(G <= cur && cur < G + Y)) 
+            for (int i = 0; i < n; i++) 
             {
-                allYellow = false;
-                break;
+                int G = signals[i][0];
+                int Y = signals[i][1];
+                int R = signals[i][2];
+                
+                int cycle = G + Y + R;
+                int cur = (t - 1) % cycle;
+                
+                if (!(G <= cur && cur < G + Y)) 
+                {
+                    allYellow = false;
+                    break;
+                }
             }
+            
+            if (allYellow) 
+                return t;
         }
-        
-        if (allYellow) 
-            return t;
     }
     
     return -1;
